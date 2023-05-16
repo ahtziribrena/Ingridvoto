@@ -1,0 +1,22 @@
+{% extends "layouts.html"%}
+{% block content %}
+    <form method="POST" novalidate>
+        {% csrf_token %}
+        <div class="row mt-5">
+            <div class="col-4"></div>
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-header bg-success">
+                        <h2 class="text-center">Candidatura</h2>
+                    </div>
+                    <div class="card-body">
+                        {{ form.as_p }}
+                    </div>
+                    <div class="card-footer">
+                        <input type="submit" class="btn btn-success">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock %} 

@@ -1,0 +1,36 @@
+{% extends 'layouts.html' %}
+{% block content %}
+<div class="row">
+    <h1 class="text-center mt-5">Ciudadanos</h1>
+    {% for ciudadano in ciudadanos %}
+    <div class="col-4 mt-4">
+        <div class="card border-success mb-3">
+            <div class="card-header bg-success">
+                <h1><span class="badge  badge-pill badge-danger ml-2">
+                        {{ciudadano.id}} </span></h1>
+            </div>
+            <div class="card-body">
+                <p> Clave Electoral: {{ciudadano.clave_Electoral}}<br>
+                    Nombre: {{ciudadano.nombre}}<br>
+                    Edad: {{ciudadano.edad}}<br>
+                    Curp: {{ciudadano.curp}}<br>
+                    Direccion: {{ciudadano.direccion}}</p>
+            </div>
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-6">
+                        <a href="{% url 'editarciudadanos' ciudadano.id %}">
+                            Editar<i class="fa-solid fa-file-pen"></i></a>
+                    </div>
+                    <div class="col-6">
+                        <a type="button" class="btn btn-success"
+                            href="{% url 'eliminarciudadano' ciudadano.id %}">Eliminar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+</div>
+{% endblock %}

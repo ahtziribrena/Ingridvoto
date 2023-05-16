@@ -1,0 +1,24 @@
+{% extends 'layouts.html' %}
+{% block content %}
+<div class="row">
+    <h1 class="text-center mt-5">votos</h1>
+    {% for voto in votos %}
+    <div class="col-4 mt-4">
+        <div class="card border-success mb-3">
+            <div class="card-header bg-success">
+                <h1><span class="badge  badge-pill badge-danger ml-2">
+                        {{voto.id}} </span></h1>
+            </div>
+            <div class="card-body">
+                Partido selecccionado: {{voto.voto}}
+            </div>
+            <div class="card-footer">
+                <div class="row">
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+</div>
+{% endblock %}
